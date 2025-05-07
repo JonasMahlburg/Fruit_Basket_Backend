@@ -1,0 +1,16 @@
+<!-- templates/fruits.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Früchte-Liste</title>
+</head>
+<body>
+    <h1>Früchte</h1>
+    <ul>
+        {% for frucht in fruits %}
+            <li>{{ frucht.name }} – {{ frucht.gewicht }}g – {{ frucht.farbe }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
