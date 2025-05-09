@@ -1,0 +1,8 @@
+
+
+<h2>Fakten zu unseren Früchten</h2>
+<ul>
+    {% for fruit in fruits %}
+        <li><strong>{{ fruit.name }}:</strong> {{ fruit.fakt }}</li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,22 @@
+{% include "fruit_basket/header.html" %}
+{% load static %}
+
+
+
+<!-- templates/fruits.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Früchte-Liste</title>
+</head>
+<body>
+{% block header %}{% endblock header %}
+{% block content %}{% endblock content %}
+ {% comment %} {% block info %}
+    {% include "fruit_basket/info.html" %}
+{% endblock info %} {% endcomment %}
+<a href="{% url 'fruit_info' %}">Infos</a>
+
+</body>
+</html>
