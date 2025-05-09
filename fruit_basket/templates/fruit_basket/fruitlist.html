@@ -2,13 +2,29 @@
 {% load static %}
 
 {% block content %}
+    <h2>Bestellt</h2>
+  
+      <ul>
+        {% for fruit in fruits %}
+            {% if fruit.isOrdered %}
+                <li>{{ fruit.name }}</li>
+                <li>
+                    <img class="img" src="{% static 'fruit_basket/img/'|add:fruit.name|lower|add:'.jpg' %}" alt="{{ fruit.name }}" width="150">
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    </table>
+
+    <h2>Noch nicht bestellt</h2>
     <ul>
         {% for fruit in fruits %}
-            <li>{{ fruit.name }}</li>
-                   
-                <img class="img" src="{% static 'fruit_basket/img/'|add:fruit.name|lower|add:'.jpg' %}" alt="{{ fruit.name }}" width="150">
-            
-        
+            {% if not fruit.isOrdered %}
+                <li>{{ fruit.name }}</li>
+                <li>
+                    <img class="img" src="{% static 'fruit_basket/img/'|add:fruit.name|lower|add:'.jpg' %}" alt="{{ fruit.name }}" width="150">
+                </li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% endblock content %}
