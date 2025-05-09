@@ -6,6 +6,7 @@ import json
 
 
 
+
 def send_fruits(request):
     if request.method == 'GET':
         return HttpResponse(json.dumps(fruits), content_type="application/json")

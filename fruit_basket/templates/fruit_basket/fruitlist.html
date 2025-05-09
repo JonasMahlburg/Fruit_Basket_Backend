@@ -1,9 +1,14 @@
 {% extends "fruit_basket/base.html" %}
+{% load static %}
 
 {% block content %}
     <ul>
         {% for fruit in fruits %}
             <li>{{ fruit.name }}</li>
+                   
+                <img class="img" src="{% static 'fruit_basket/img/'|add:fruit.name|lower|add:'.jpg' %}" alt="{{ fruit.name }}" width="150">
+            
+        
         {% endfor %}
     </ul>
 {% endblock content %}
