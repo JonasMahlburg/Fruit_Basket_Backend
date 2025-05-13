@@ -15,10 +15,11 @@
 </head>
 <body>
 {% block header %}{% endblock header %}
+<div class="tables">
 {% block content %}{% endblock content %}
- {% comment %} {% block info %}
-    {% include "fruit_basket/info.html" %}
-{% endblock info %} {% endcomment %}
+</div>
+
+
 <a href="{% url 'fruit_info' %}">Infos</a>
 
 </body>

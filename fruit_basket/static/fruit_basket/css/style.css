@@ -5,3 +5,17 @@ h1{
 .img{
     width: 150px;
 }
+
+.tables{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#orderd{
+    color: green;
+}
+
+#isNotordered{
+    color: red;
+}

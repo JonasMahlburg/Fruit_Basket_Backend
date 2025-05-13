@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <h2>Bestellt</h2>
-  
+<div>
+    <h2 id="orderd">Bestellt</h2>
       <ul>
         {% for fruit in fruits %}
             {% if fruit.isOrdered %}
@@ -14,9 +14,10 @@
             {% endif %}
         {% endfor %}
     </ul>
-    </table>
+</div>
 
-    <h2>Noch nicht bestellt</h2>
+<div>
+    <h2 id="isNotordered">Noch nicht bestellt</h2>
     <ul>
         {% for fruit in fruits %}
             {% if not fruit.isOrdered %}
@@ -27,4 +28,7 @@
             {% endif %}
         {% endfor %}
     </ul>
+</div>
+
+    
 {% endblock content %}
