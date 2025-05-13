@@ -1,5 +1,5 @@
 from django.shortcuts import  render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from .fruit_list import fruits
 import json
 
@@ -20,7 +20,7 @@ def send_fruits(request):
             fruits.append(data)
             return HttpResponse(json.dumps({"status": "success", "added": data}), content_type="application/json")
         else:
-            return HttpResponse(json.dumps({"status": "error", "message": "Missing fields"}), content_type="application/json", status=400)
+            raise Http404()
         
 
 def send_more_fruits(request):
